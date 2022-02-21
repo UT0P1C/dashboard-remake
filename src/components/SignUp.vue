@@ -71,7 +71,6 @@ export default {
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	background-color: #d8d8d8;
 }
 
 .signup-content{

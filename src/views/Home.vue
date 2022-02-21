@@ -2,10 +2,14 @@
 
 	<div class="home">
 		<NavBar/>
-		<Footer />
 		<div class="main">
 
+			<div class="home-container">
+
+			</div>
+
 		</div>
+		<Footer />
 	</div>
 
 </template>
@@ -23,3 +27,9 @@ export default {
 	}
 };
 </script>
+
+<style scoped>
+
+
+
+</style>

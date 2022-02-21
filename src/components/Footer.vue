@@ -1,15 +1,17 @@
 <template>
-	<footer id="footer">
-        
-        <span>Esq1z0 Dashboard &copy; 2022
-        
-        <a href="https://twitter.com/esq1z0" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" id="logo"/></a>
+	<div class="footer">
+		<footer id="footer">
+			
+			<span>Esq1z0 Dashboard &copy; 2022
+			
+			<a href="https://twitter.com/esq1z0" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" id="logo"/></a>
 
-        <a href="https://github.com/UT0P1C" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" id="logo"/></a>
+			<a href="https://github.com/UT0P1C" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" id="logo"/></a>
 
-		</span>
-		
-    </footer>
+			</span>
+
+		</footer>
+	</div>
 </template>
 
 <script>
