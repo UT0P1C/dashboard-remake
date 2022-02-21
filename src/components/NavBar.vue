@@ -1,7 +1,7 @@
 <template>
 	<div class="nav" id="nav">
 
-		<router-link to="/login">Sair <i class="fa-solid fa-person-to-door"></i></router-link>
+		<router-link to="/login">Sair</router-link>
 
 	</div>
 </template>
@@ -23,7 +23,7 @@ export default {
     align-items: center;
 }
 
-#nav a{
+#nav a {
 	color: #111;
 	text-decoration: none;
 	margin: 12px;
@@ -31,7 +31,7 @@ export default {
 	font-size: 20px;
 }
 
-#nav a:hover{
+#nav a:hover {
     color: #fff;
 }
 
