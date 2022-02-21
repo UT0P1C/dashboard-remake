@@ -5,6 +5,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import Home from "../views/Home";
+import SignUp from "../components/SignUp";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyBHsniZlSX3yFa7Kt97GwF50MeX6ANaMLc",
@@ -22,17 +23,26 @@ Vue.use(VueRouter);
 
 const routes = [
 	{
+		path: "*",
+		redirect: "/login"
+	},
+	{
 		path: "/login",
 		name: "Login",
 		component: Login
 	},
 	{
-		path: "home",
+		path: "/home",
 		name: "Home",
 		component: Home,
 		meta: {
 			requeresAuth: true
 		}
+	},
+	{
+		path: "/register",
+		name: "register",
+		component: SignUp
 	}
 ];
 

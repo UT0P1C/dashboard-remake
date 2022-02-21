@@ -1,16 +1,13 @@
 <template>
 	<div class="main">
-
-		<div class="login">
-
-			<div class="login-content">
+		<div class="signup">
+			<div class="signup-content">
 				<header>
-				<h1>Login</h1>
+				<h1>Register</h1>
 				</header>
 
-				<div class="login-form">
-
-						<form>
+				<div class="signup-form">
+					<form>
 							<div class="mb-3">
 								<label class="form-label">E-mail</label>
 								<input type="email" class="form-control" v-model="email" required>
@@ -21,24 +18,18 @@
 								<input type="password" class="form-control" v-model="password" required>
 							</div>
 
-							<div class="mb-3" id="signUp">
-								<a href="/register">New here? Sign Up</a>
+							<div class="mb-3" id="signIn">
+								<a href="/login">Already registered? Sign In</a>
 							</div>
-						</form>
-						
+					</form>
+
 				</div>
 				<input 
 				type="submit" 
 				class="btn" 
-				value="Sign In" 
-				v-on:click="login" 
-				v-on:keyup.enter="login"
+				value="Sign Up!"
+				v-on:click="signUp"
 				/>
-				<div class="github-auth">
-					<a id="github-button" class="github">
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="github logo"/>
-					</a>
-				</div>
 			</div>
 		</div>
 	</div>
@@ -50,32 +41,31 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
 export default {
-	name: "Login",
+	name: "SignUp",
 	data(){
 		return{
 			email: "",
 			password: ""
 		};
 	},
-	methods:{
-		login: function(){
-			firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
+	methods: {
+		signUp: function(){
+			firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
 				() => {
-					alert("Login Successful ");
-					this.$router.replace("home");
+					alert("Sign up Successful");
+					this.$router.replace("login");
 				},
 				() => {
-					alert("Wrong Email or Password. Please try again");
-				});
+					alert("Something Wrong, Sorry, Try again");
+				}
+			);
 		}
 	}
 };
 </script>
 
-
 <style scoped>
-
-.login{
+.signup{
 	display: flex;
 	align-content: center;
 	justify-content: center;
@@ -84,7 +74,7 @@ export default {
 	background-color: #d8d8d8;
 }
 
-.login-content{
+.signup-content{
 	border-radius: 20px;
     background-color: #AD70C1;
     width: 350px;
@@ -108,7 +98,7 @@ h1{
 	color: #272929;
 }
 
-#signUp a{
+#signIn a{
 	text-decoration: none;
 	color: #272929;
 }
@@ -127,14 +117,6 @@ h1{
 
 .btn:hover{
     opacity: 0.8;
-}
-
-.github-auth img{
-	justify-content: center;
-	align-items: center;
-	height: 35px;
-	margin-top: 20px;
-	cursor: pointer;
 }
 
 </style>
